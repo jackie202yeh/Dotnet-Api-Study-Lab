@@ -1,5 +1,8 @@
 namespace WebApi.ViewModel;
 
+/// <summary>
+/// 產品查詢View Model
+/// </summary>
 public class ProductSearchViewModel
 {
     /// <summary>

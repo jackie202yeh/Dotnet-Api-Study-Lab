@@ -6,6 +6,10 @@ using Service.Interfaces;
 
 namespace Service.Implements;
 
+/// <summary>
+/// 產品服務
+/// </summary>
+/// <seealso cref="Service.Interfaces.IProductService" />
 public class ProductService : IProductService
 {
     private readonly IProductRepository _productRepository;
@@ -18,6 +22,11 @@ public class ProductService : IProductService
         this._productRepository = productRepository;
     }
 
+    /// <summary>
+    /// 根據Id查詢產品
+    /// </summary>
+    /// <param name="id">The identifier.</param>
+    /// <returns></returns>
     public async Task<SearchProductDto> GetByIdAsync(int id)
     {
         var dataModel = await this._productRepository.GetByIdAsync(id);
@@ -38,6 +47,11 @@ public class ProductService : IProductService
         return dto;
     }
 
+    /// <summary>
+    /// 產品新增
+    /// </summary>
+    /// <param name="infoModel">The information model.</param>
+    /// <returns></returns>
     public async Task<int> CreateAsync(ProductCreateInfoModel infoModel)
     {
         var condition = new ProductCreateCondition
@@ -52,11 +66,17 @@ public class ProductService : IProductService
             ReorderLevel = infoModel.ReorderLevel,
             Discontinued = infoModel.Discontinued
         };
+
         var id = await this._productRepository.CreateAsync(condition);
 
         return id;
     }
 
+    /// <summary>
+    /// 產品更新
+    /// </summary>
+    /// <param name="infoModel">The information model.</param>
+    /// <returns></returns>
     public async Task<bool> UpdateAsync(ProductUpdateInfoModel infoModel)
     {
         var condition = new ProductUpdateCondition
@@ -74,6 +94,11 @@ public class ProductService : IProductService
         return await this._productRepository.UpdateAsync(condition);
     }
 
+    /// <summary>
+    /// 產品刪除
+    /// </summary>
+    /// <param name="id">The identifier.</param>
+    /// <returns></returns>
     public async Task<bool> DeleteAsync(int id)
     {
         return await this._productRepository.DeleteAsync(id);

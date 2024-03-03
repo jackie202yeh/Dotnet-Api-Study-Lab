@@ -1,5 +1,8 @@
 namespace Service.Dtos;
 
+/// <summary>
+/// 產品查詢Dto
+/// </summary>
 public class SearchProductDto
 {
     /// <summary>

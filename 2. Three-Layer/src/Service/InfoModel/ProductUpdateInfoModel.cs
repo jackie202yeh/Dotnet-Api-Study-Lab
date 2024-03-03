@@ -1,5 +1,8 @@
 namespace Service.InfoModel;
 
+/// <summary>
+/// 產品更新InfoModel
+/// </summary>
 public class ProductUpdateInfoModel
 {
     /// <summary>

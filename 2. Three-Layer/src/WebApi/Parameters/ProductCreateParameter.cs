@@ -1,5 +1,8 @@
 namespace WebApi.Parameters;
 
+/// <summary>
+/// 產品新增Parameter
+/// </summary>
 public class ProductCreateParameter
 {
     /// <summary>

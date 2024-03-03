@@ -1,5 +1,8 @@
-namespace API.Controllers;
+namespace WebApi.Parameters;
 
+/// <summary>
+/// 產品更新Parameter
+/// </summary>
 public class ProductUpdateParameter
 {
     /// <summary>
