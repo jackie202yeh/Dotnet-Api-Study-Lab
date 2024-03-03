@@ -7,13 +7,13 @@ root = true
 #### 核心 EditorConfig 選項 ####
 
 # 縮排和間距
-indent_size = 4
-indent_style = space
-tab_width = 4
+indent_size = 4                 #每一層縮排使用 4 個空格。
+indent_style = space            #使用空格來進行縮排，而非使用 tab 鍵。
+tab_width = 4                   #如果遇到 tab 鍵，則視為 4 個空格。
 
 # 新行喜好設定
-end_of_line = crlf
-insert_final_newline = false
+end_of_line = crlf              #使用 CRLF (Windows style) 作為換行符號 (預設為 LF)。
+insert_final_newline = false    #不在檔案結尾自動插入換行符。
 
 # 檔案儲存格式
 charset = utf-8
@@ -21,11 +21,13 @@ charset = utf-8
 #### .NET 編碼慣例 ####
 
 # 組合管理 Using
+#允許在 using 指令中混合 System 和非 System 的命名空間。
 dotnet_separate_import_directive_groups = false
+#在 using 指令中，將 System 命名空間排序到最前面。  
 dotnet_sort_system_directives_first = true
 
 # this. 和 Me. 喜好設定
-dotnet_style_qualification_for_event = true:warning
+dotnet_style_qualification_for_event = true:warning #要求在事件宣告中明確指定類別
 dotnet_style_qualification_for_field = true:warning
 dotnet_style_qualification_for_method = true:warning
 dotnet_style_qualification_for_property = true:warning
